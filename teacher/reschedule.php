@@ -33,48 +33,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conflicts = $conn->query($conflict_sql);
 
     if ($conflicts->num_rows > 0) {
-        $msg = "<div class='alert alert-danger'>Conflict detected with another schedule in this section or room.</div>";
+        $msg = "<div class='alert alert-danger mt-3'>⚠️ Conflict detected with another schedule in this section or room.</div>";
     } else {
         $update_sql = "UPDATE schedules SET start_time = '$new_start', end_time = '$new_end', room = '$new_room' WHERE id = $schedule_id";
         if ($conn->query($update_sql)) {
-            $msg = "<div class='alert alert-success'>Schedule updated successfully.</div>";
+            $msg = "<div class='alert alert-success mt-3'>✅ Schedule updated successfully.</div>";
         } else {
-            $msg = "<div class='alert alert-danger'>Error updating schedule.</div>";
+            $msg = "<div class='alert alert-danger mt-3'>❌ Error updating schedule.</div>";
         }
     }
 }
 ?>
 
-<h3 class="mb-4">Reschedule Your Class/Test/Assignment</h3>
-<?php if (isset($msg)) echo $msg; ?>
+<div class="container py-4">
 
-<form method="post" class="row g-3">
-    <div class="col-md-12">
-        <label for="schedule_id">Select Schedule</label>
-        <select class="form-select" name="schedule_id" required>
-            <option value="">Choose...</option>
-            <?php while ($row = $schedules_result->fetch_assoc()): ?>
-            <option value="<?php echo $row['id']; ?>">
-                <?php echo $row['course_name'] . " (" . $row['schedule_type'] . ") on " . $row['start_time']; ?>
-            </option>
-            <?php endwhile; ?>
-        </select>
+    <!-- Logout Button -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
     </div>
-    <div class="col-md-6">
-        <label>New Start Time</label>
-        <input type="datetime-local" name="start_time" class="form-control" required>
+
+    <!-- Page Heading -->
+    <h3 class="mb-4">📅 Reschedule Your Class/Test/Assignment</h3>
+
+    <?php if (isset($msg)) echo $msg; ?>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <form method="post" class="row g-3">
+
+                <!-- Schedule selection -->
+                <div class="col-md-12">
+                    <label for="schedule_id" class="form-label">Select Schedule</label>
+                    <select class="form-select" name="schedule_id" required>
+                        <option value="">Choose...</option>
+                        <?php while ($row = $schedules_result->fetch_assoc()): ?>
+                        <option value="<?php echo $row['id']; ?>">
+                            <?php echo $row['course_name'] . " (" . $row['schedule_type'] . ") on " . $row['start_time']; ?>
+                        </option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+
+                <!-- Date/time and room inputs -->
+                <div class="col-md-6">
+                    <label for="start_time" class="form-label">New Start Time</label>
+                    <input type="datetime-local" name="start_time" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="end_time" class="form-label">New End Time</label>
+                    <input type="datetime-local" name="end_time" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="room" class="form-label">New Room</label>
+                    <input type="text" name="room" class="form-control" required>
+                </div>
+
+                <!-- Submit button -->
+                <div class="col-12">
+                    <button type="submit" class="btn btn-warning">Update Schedule</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="col-md-6">
-        <label>New End Time</label>
-        <input type="datetime-local" name="end_time" class="form-control" required>
-    </div>
-    <div class="col-md-6">
-        <label>New Room</label>
-        <input type="text" name="room" class="form-control" required>
-    </div>
-    <div class="col-12">
-        <button class="btn btn-warning">Update Schedule</button>
-    </div>
-</form>
+
+</div>
 
 <?php include '../includes/footer.php'; ?>
