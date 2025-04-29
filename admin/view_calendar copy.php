@@ -6,7 +6,6 @@ require '../db.php';
 $role = $_SESSION['role'];
 $user_id = $_SESSION['id'];
 
-
 if ($role === 'admin') {
     $sql = "SELECT * FROM schedules";
 } elseif ($role === 'teacher') {
@@ -36,14 +35,20 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
-<div class="text-end mb-3">
-    <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
+<div class="container py-4">
+    <div class="text-end mb-3">
+        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div id="calendar"></div>
+        </div>
+    </div>
 </div>
 
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
-
-<div id='calendar'></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -55,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        }
+        },
+        height: "auto"
     });
     calendar.render();
 });
