@@ -36,29 +36,45 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
-<div class="text-end mb-3">
-    <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
+<!-- Main container -->
+<div class="container py-4">
+
+    <!-- Logout button -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
+    </div>
+
+    <!-- Page title -->
+    <h3 class="mb-4">🗓️ Class Schedule Calendar</h3>
+
+    <!-- FullCalendar styles and script -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js"></script>
+
+    <!-- Calendar container -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <div id="calendar"></div>
+        </div>
+    </div>
+
 </div>
 
-<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
-
-<div id='calendar'></div>
-
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'timeGridWeek',
-        events: <?php echo json_encode($schedules); ?>,
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'timeGridWeek',
+            events: <?php echo json_encode($schedules); ?>,
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            height: 'auto'
+        });
+        calendar.render();
     });
-    calendar.render();
-});
 </script>
 
 <?php include '../includes/footer.php'; ?>
