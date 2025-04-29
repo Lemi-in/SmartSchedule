@@ -6,7 +6,7 @@ require '../db.php';
 $role = $_SESSION['role'];
 $user_id = $_SESSION['id'];
 
-// Fetch schedules based on role
+
 if ($role === 'admin') {
     $sql = "SELECT * FROM schedules";
 } elseif ($role === 'teacher') {

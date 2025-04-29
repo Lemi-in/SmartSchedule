@@ -8,7 +8,6 @@ if ($_SESSION['role'] != 'admin') {
     exit();
 }
 
-// Fetch basic counts for analytics
 $dept_count = $conn->query("SELECT COUNT(*) as count FROM departments")->fetch_assoc()['count'];
 $teacher_count = $conn->query("SELECT COUNT(*) as count FROM users WHERE role='teacher'")->fetch_assoc()['count'];
 $student_count = $conn->query("SELECT COUNT(*) as count FROM users WHERE role='student'")->fetch_assoc()['count'];

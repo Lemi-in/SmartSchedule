@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $room = $_POST['room'];
     $schedule_type = $_POST['schedule_type'];
 
-    $department_id = 1; // In future, fetch based on admin's assigned university/department
+    $department_id = 1; 
     $scheduled_by = $_SESSION['id'];
 
     $sql = "INSERT INTO schedules (course_name, department_id, section, scheduled_by, schedule_type, start_time, end_time, room)

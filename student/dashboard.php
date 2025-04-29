@@ -10,7 +10,6 @@ if ($_SESSION['role'] != 'student') {
 
 $user_id = $_SESSION['id'];
 
-// Get the student's section and department
 $user_result = $conn->query("SELECT section, department_id FROM users WHERE id = $user_id");
 $user_data = $user_result->fetch_assoc();
 $section = $user_data['section'];
