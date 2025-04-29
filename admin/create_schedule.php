@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col-md-6">
                     <label class="form-label">Schedule Type</label>
                     <select name="schedule_type" class="form-select" required>
-                        <option value="course">Course</option>
+                        <option value="course">Lecture</option>
                         <option value="test">Test</option>
                         <option value="assignment">Assignment</option>
                     </select>
