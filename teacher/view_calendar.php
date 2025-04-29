@@ -36,14 +36,27 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
-<div class="text-end mb-3">
-    <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-</div>
-
+<!-- FullCalendar Styles -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
 
-<div id='calendar'></div>
+<div class="container py-4">
+
+    <!-- Logout Button -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
+    </div>
+
+    <!-- Page Heading -->
+    <h3 class="mb-4">📅 Weekly Class/Test/Assignment Calendar</h3>
+
+    <!-- Calendar Container -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <div id="calendar"></div>
+        </div>
+    </div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -55,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        }
+        },
+        height: 'auto',
     });
     calendar.render();
 });
