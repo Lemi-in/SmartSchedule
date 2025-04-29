@@ -1,4 +1,4 @@
-<div class="text-end"><a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a></div><hr><?php
+<?php
 include '../includes/auth.php';
 include '../includes/header.php';
 require '../db.php';
@@ -17,42 +17,58 @@ $department_id = $user_data['department_id'];
 
 // Get relevant schedules
 $schedules = $conn->query("SELECT * FROM schedules WHERE section = '$section' AND department_id = $department_id ORDER BY start_time ASC");
-
 ?>
 
-<h3 class="mb-4">Student Dashboard</h3>
+<!-- Page container -->
+<div class="container py-4">
 
-<div class="card mb-4">
-    <div class="card-body">
-        <h5>Your Section</h5>
-        <p><?php echo $section; ?></p>
+    <!-- Logout button -->
+    <div class="d-flex justify-content-end mb-2">
+        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
     </div>
+    <hr>
+
+    <!-- Page Title -->
+    <h3 class="mb-4">🎓 Student Dashboard</h3>
+
+    <!-- Section Info Card -->
+    <div class="card mb-4 shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="card-title">Your Section</h5>
+            <p class="card-text text-muted fs-5"><?php echo $section; ?></p>
+        </div>
+    </div>
+
+    <!-- Schedule Table -->
+    <h5 class="mb-3">📅 Upcoming Schedules</h5>
+    <div class="table-responsive mb-4">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Course</th>
+                    <th>Type</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = $schedules->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($row['course_name']); ?></td>
+                    <td><?php echo ucfirst(htmlspecialchars($row['schedule_type'])); ?></td>
+                    <td><?php echo $row['start_time']; ?></td>
+                    <td><?php echo $row['end_time']; ?></td>
+                    <td><?php echo htmlspecialchars($row['room']); ?></td>
+                </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Calendar Button -->
+    <a href="../admin/view_calendar.php" class="btn btn-primary">View Calendar</a>
+
 </div>
-
-<h5 class="mb-3">Upcoming Schedules</h5>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Course</th>
-            <th>Type</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Room</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php while ($row = $schedules->fetch_assoc()): ?>
-        <tr>
-            <td><?php echo $row['course_name']; ?></td>
-            <td><?php echo ucfirst($row['schedule_type']); ?></td>
-            <td><?php echo $row['start_time']; ?></td>
-            <td><?php echo $row['end_time']; ?></td>
-            <td><?php echo $row['room']; ?></td>
-        </tr>
-        <?php endwhile; ?>
-    </tbody>
-</table>
-
-<a href="../admin/view_calendar.php" class="btn btn-primary">View Calendar</a>
 
 <?php include '../includes/footer.php'; ?>
