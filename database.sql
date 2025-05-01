@@ -1,5 +1,6 @@
 CREATE DATABASE university_scheduler;
 
+-- guys This SQL script creates a database for a university scheduling system.
 USE university_scheduler;
 
 CREATE TABLE universities (

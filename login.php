@@ -1,4 +1,5 @@
 <?php
+// logs in the user
 session_start();
 require 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
