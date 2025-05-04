@@ -15,6 +15,10 @@ $user_data = $user_result->fetch_assoc();
 $section = $user_data['section'];
 $department_id = $user_data['department_id'];
 
+$department_result = $conn->query("SELECT name FROM departments WHERE id = $department_id");
+$department_data = $department_result->fetch_assoc();
+$department_name = $department_data['name'];
+
 $schedules = $conn->query("SELECT * FROM schedules WHERE section = '$section' AND department_id = $department_id ORDER BY start_time ASC");
 ?>
 
@@ -26,6 +30,13 @@ $schedules = $conn->query("SELECT * FROM schedules WHERE section = '$section' AN
     <hr>
 
     <h3 class="mb-4">🎓 Student Dashboard</h3>
+
+    <div class="card mb-4 shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="card-title">Your Department</h5>
+            <p class="card-text text-muted fs-5"><?php echo $department_name; ?></p>
+        </div>
+    </div>
 
     <div class="card mb-4 shadow-sm border-0">
         <div class="card-body">
