@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </select>
                 </div>
                 <div class="col-12 text-end">
+                    <a href="dashboard.php" class="btn btn-primary me-2">Back to Dashboard</a>
                     <button class="btn btn-success">Create Schedule</button>
                 </div>
             </form>
