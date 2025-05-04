@@ -50,7 +50,10 @@ CREATE TABLE schedules (
 );
 
 INSERT INTO universities (name) VALUES ('Example University');
-INSERT INTO departments (university_id, name) VALUES (1, 'Computer Science');
+INSERT INTO departments (university_id, name) VALUES 
+(1, 'Computer Science'),
+(2, 'Electrical Engineering'), 
+(3, 'Architecture');
 
 INSERT INTO users (name, email, password, role, university_id, department_id, section) VALUES
 ('Admin User', 'admin@example.com', MD5('admin123'), 'admin', 1, NULL, NULL),
