@@ -35,7 +35,7 @@ $schedule_count = $conn->query("SELECT COUNT(*) as count FROM schedules")->fetch
                     <p class="h3"><?php echo $teacher_count; ?></p>
                 </div>
             </div>
-        </div>
+        </div> 
         <div class="col-md-3 mb-3">
             <div class="card bg-warning text-white text-center">
                 <div class="card-body">
