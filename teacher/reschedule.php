@@ -92,6 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <!-- Submit button -->
                 <div class="col-12">
+                    <a href="dashboard.php" class="btn btn-primary me-2">Back to Dashboard</a>
                     <button type="submit" class="btn btn-warning">Update Schedule</button>
                 </div>
             </form>
