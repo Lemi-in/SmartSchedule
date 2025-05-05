@@ -14,6 +14,22 @@ $student_count = $conn->query("SELECT COUNT(*) as count FROM users WHERE role='s
 $schedule_count = $conn->query("SELECT COUNT(*) as count FROM schedules")->fetch_assoc()['count'];
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SmartSchedule</title>
+    <!-- Add your stylesheets here -->
+    <link rel="stylesheet" href="path/to/your/styles.css">
+    <!-- Example Bootstrap CDN if needed -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+</head>
+<body>
+
+
+
 <div class="container py-4">
     <div class="text-end mb-3">
         <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
@@ -61,3 +77,6 @@ $schedule_count = $conn->query("SELECT COUNT(*) as count FROM schedules")->fetch
 </div>
 
 <?php include '../includes/footer.php'; ?>
+
+</body>
+</html>
