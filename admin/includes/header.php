@@ -21,8 +21,8 @@
         <ul class="nav__items">
 
             <li><a href="create_schedule.php">new schedule</a></li>
-            <li><a href="view_calender.php">view calender</a></li>
-            <li><a href="edit_calender.php">edit calender</a></li>
+            <li><a href="view_calendar.php">view calendar</a></li>
+            <li><a href="">edit calender</a></li>
             <li><a href="news.php">News</a></li>
             <li class="nav__profile">
 
