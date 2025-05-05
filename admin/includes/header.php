@@ -20,17 +20,17 @@
         <a href="index.html" class = "nav__logo">SmartSchedule</a>
         <ul class="nav__items">
 
-            <li><a href="new_schedule.html">new schedule</a></li>
-            <li><a href="view_calander.html">view calander</a></li>
-            <li><a href="edit_calander.html">edit calander</a></li>
-            <li><a href="news.html">News</a></li>
+            <li><a href="create_schedule.php">new schedule</a></li>
+            <li><a href="view_calender.php">view calender</a></li>
+            <li><a href="edit_calender.php">edit calender</a></li>
+            <li><a href="news.php">News</a></li>
             <li class="nav__profile">
 
                 <div class="avatar">
                     <img src="../images/avatar1.jpg" alt="">
                 </div>
                 <ul>
-                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="../logout.php">Logout</a></li>
                 </ul>
             </li>
