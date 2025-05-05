@@ -1,5 +1,5 @@
 <?php
-include '../includes/auth.php';
+include './includes/auth.php';
 include '../includes/header.php';
 require '../db.php';
 
@@ -101,4 +101,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include './includes/footer.php'; ?>

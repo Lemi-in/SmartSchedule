@@ -1,5 +1,5 @@
 <?php
-include '../includes/auth.php';
+include './includes/auth.php';
 include '../includes/header.php';
 require '../db.php';
 
@@ -24,9 +24,7 @@ $schedules = $conn->query("SELECT * FROM schedules WHERE section = '$section' AN
 
 <div class="container py-4">
 
-    <div class="d-flex justify-content-end mb-2">
-        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-    </div>
+   
     <hr>
 
     <h3 class="mb-4">🎓 Student Dashboard</h3>
@@ -75,4 +73,4 @@ $schedules = $conn->query("SELECT * FROM schedules WHERE section = '$section' AN
 
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include './includes/footer.php'; ?>

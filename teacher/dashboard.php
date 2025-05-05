@@ -33,11 +33,7 @@ $schedule_result = $conn->query("SELECT * FROM schedules WHERE section IN ('$sec
 
 <div class="container py-4">
 
-    <!-- Logout button -->
-    <div class="d-flex justify-content-end mb-3">
-        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-    </div>
-
+    
     <!-- Page title -->
     <h3 class="mb-4">👨‍🏫 Teacher Dashboard</h3>
 

@@ -20,14 +20,13 @@
         <a href="dashboard.php" class = "nav__logo">SmartSchedule</a>
         <ul class="nav__items">
 
-            <li><a href="create_schedule.php">new schedule</a></li>
             <li><a href="view_calendar.php">view calendar</a></li>
-            <li><a href="">edit calender</a></li>
+            <li><a href="reschedule.php">reschedule</a></li>
             <li><a href="news.php">News</a></li>
             <li class="nav__profile">
 
                 <div class="avatar">
-                    <img src="../images/avatar1.jpg" alt="">
+                    <img src="../images/avatar2.jpg" alt="">
                 </div>
                 <ul>
                     <li><a href="dashboard.php">Dashboard</a></li>

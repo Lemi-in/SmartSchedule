@@ -10,6 +10,7 @@ if ($_SESSION['role'] != 'admin') {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $course_name = $_POST['course_name'];
+    $department_id = $_POST['department_id'];
     $section = $_POST['section'];
     $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
