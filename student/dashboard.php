@@ -1,6 +1,6 @@
 <?php
 include './includes/auth.php';
-include '../includes/header.php';
+include './includes/header.php';
 require '../db.php';
 
 if ($_SESSION['role'] != 'student') {
@@ -24,7 +24,7 @@ $schedules = $conn->query("SELECT * FROM schedules WHERE section = '$section' AN
 
 <div class="container py-4">
 
-   
+
     <hr>
 
     <h3 class="mb-4">🎓 Student Dashboard</h3>

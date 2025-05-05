@@ -1,6 +1,6 @@
 <?php
-include '../includes/auth.php';
-include '../includes/header.php';
+include './includes/auth.php';
+include './includes/header.php';
 require '../db.php';
 
 if ($_SESSION['role'] != 'teacher') {
@@ -33,7 +33,7 @@ $schedule_result = $conn->query("SELECT * FROM schedules WHERE section IN ('$sec
 
 <div class="container py-4">
 
-    
+
     <!-- Page title -->
     <h3 class="mb-4">👨‍🏫 Teacher Dashboard</h3>
 
@@ -89,4 +89,4 @@ $schedule_result = $conn->query("SELECT * FROM schedules WHERE section IN ('$sec
 
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include './includes/footer.php'; ?>

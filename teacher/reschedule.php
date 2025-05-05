@@ -1,6 +1,6 @@
 <?php
 include './includes/auth.php';
-include '../includes/header.php';
+include './includes/header.php';
 require '../db.php';
 
 if ($_SESSION['role'] != 'teacher') {
@@ -47,10 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="container py-4">
 
-    <!-- Logout Button -->
-    <div class="d-flex justify-content-end mb-3">
-        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-    </div>
+    
 
     <!-- Page Heading -->
     <h3 class="mb-4">📅 Reschedule Your Class/Test/Assignment</h3>

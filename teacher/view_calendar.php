@@ -1,6 +1,6 @@
 <?php
-include '../includes/auth.php';
-include '../includes/header.php';
+include './includes/auth.php';
+include './includes/header.php';
 require '../db.php';
 
 $role = $_SESSION['role'];
@@ -42,10 +42,7 @@ while ($row = $result->fetch_assoc()) {
 
 <div class="container py-4">
 
-    <!-- Logout Button -->
-    <div class="d-flex justify-content-end mb-3">
-        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-    </div>
+   
 
     <!-- Page Heading -->
     <h3 class="mb-4">📅 Weekly Class/Test/Assignment Calendar</h3>
@@ -75,4 +72,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<?php include '../includes/footer.php'; ?>
+<?php include './includes/footer.php'; ?>

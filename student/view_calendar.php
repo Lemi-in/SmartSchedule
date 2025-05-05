@@ -39,11 +39,7 @@ while ($row = $result->fetch_assoc()) {
 <!-- Main container -->
 <div class="container py-4">
 
-    <!-- Logout button -->
-    <div class="d-flex justify-content-end mb-3">
-        <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-    </div>
-
+    
     <!-- Page title -->
     <h3 class="mb-4">🗓️ Class Schedule Calendar</h3>
 
