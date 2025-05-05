@@ -36,12 +36,12 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 
-<div class="text-end mb-3">
-    <a href="../logout.php" class="btn btn-outline-danger btn-sm">Logout</a>
-</div>
+<!-- FullCalendar CSS -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.css" rel="stylesheet" />
 
-<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.js'></script>
+<!-- FullCalendar JS (with plugins) -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+
 
 <div id='calendar'></div>
 
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     calendar.render();
 });
+
 </script>
 
 <?php include './includes/footer.php'; ?>
