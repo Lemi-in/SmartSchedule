@@ -1,6 +1,6 @@
 <?php
-include '../includes/auth.php';
-include '../includes/header.php';
+include './includes/auth.php';
+include './includes/header.php';
 require '../db.php';
 
 if ($_SESSION['role'] != 'admin') {
@@ -74,4 +74,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include './includes/footer.php'; ?>

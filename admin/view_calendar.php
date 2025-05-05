@@ -1,6 +1,6 @@
 <?php
-include '../includes/auth.php';
-include '../includes/header.php';
+include './includes/auth.php';
+include './includes/header.php';
 require '../db.php';
 
 $role = $_SESSION['role'];
@@ -61,4 +61,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<?php include '../includes/footer.php'; ?>
+<?php include './includes/footer.php'; ?>
