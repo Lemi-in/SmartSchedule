@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $room = $_POST['room'];
     $schedule_type = $_POST['schedule_type'];
 
-    $department_id = 1;
     $scheduled_by = $_SESSION['id'];
 
     $sql = "INSERT INTO schedules (course_name, department_id, section, scheduled_by, schedule_type, start_time, end_time, room)
@@ -43,6 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" name="course_name" class="form-control" required>
                 </div>
                 <div class="col-md-6">
+                    <label class="form-label">Department ID</label>
+                    <input type="text" name="department_id" class="form-control" required>
+                </div>
+                <div class="col-md-6">
                     <label class="form-label">Section</label>
                     <input type="text" name="section" class="form-control" required>
                 </div>
@@ -67,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </select>
                 </div>
                 <div class="col-12 text-end">
+                    <a href="dashboard.php" class="btn btn-primary me-2">Back to Dashboard</a>
                     <button class="btn btn-success">Create Schedule</button>
                 </div>
             </form>

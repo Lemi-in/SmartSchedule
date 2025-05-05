@@ -10,6 +10,15 @@ if ($_SESSION['role'] != 'teacher') {
 
 $user_id = $_SESSION['id'];
 
+//Fetch teacher department
+$user_result = $conn->query("SELECT department_id FROM users WHERE id = $user_id");
+$user_data = $user_result->fetch_assoc();
+$department_id = $user_data['department_id'];
+
+$department_result = $conn->query("SELECT name FROM departments WHERE id = $department_id");
+$department_data = $department_result->fetch_assoc();
+$department_name = $department_data['name'];
+
 // Fetch teacher sections
 $sections_result = $conn->query("SELECT section FROM teacher_sections WHERE teacher_id = $user_id");
 $sections = [];
@@ -33,6 +42,13 @@ $schedule_result = $conn->query("SELECT * FROM schedules WHERE section IN ('$sec
     <h3 class="mb-4">👨‍🏫 Teacher Dashboard</h3>
 
     <!-- Sections card -->
+    <div class="card mb-4 shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="card-title">Your Department</h5>
+            <p class="card-text"><?php echo $department_name; ?></p>
+        </div>
+    </div>
+
     <div class="card mb-4 shadow-sm border-0">
         <div class="card-body">
             <h5 class="card-title">Your Sections</h5>
