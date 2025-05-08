@@ -1,20 +1,30 @@
 <?php
-// logs in the user
 session_start();
 require 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = $conn->query($sql);
-    if ($result->num_rows == 1) {
-        $user = $result->fetch_assoc();
-        $_SESSION['id'] = $user['id'];
-        $_SESSION['role'] = $user['role'];
-        header("Location: {$user['role']}/dashboard.php");
-    } else {
-        $error = "Invalid credentials!";
-    }
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  
+  $sql = "SELECT * FROM users WHERE email = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("s", $email);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  
+  if ($result->num_rows === 1) {
+      $user = $result->fetch_assoc();
+      if (password_verify($password, $user['password'])) {
+          $_SESSION['id'] = $user['id'];
+          $_SESSION['role'] = $user['role'];
+          header("Location: {$user['role']}/dashboard.php");
+          exit();
+      } else {
+          $error = "Invalid credentials!";
+      }
+  } else {
+      $error = "Invalid credentials!";
+  }
+  
 }
 include 'includes/header.php';
 ?>
