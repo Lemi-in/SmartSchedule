@@ -1,6 +1,4 @@
 CREATE DATABASE university_scheduler;
-
--- guys This SQL script creates a database for a university scheduling system.
 USE university_scheduler;
 
 CREATE TABLE universities (
@@ -50,22 +48,16 @@ CREATE TABLE schedules (
 );
 
 INSERT INTO universities (name) VALUES ('Example University');
+
 INSERT INTO departments (university_id, name) VALUES 
 (1, 'Computer Science'),
-(2, 'Electrical Engineering'), 
-(3, 'Architecture');
+(1, 'Electrical Engineering'),
+(1, 'Architecture');
 
+-- Users with MD5-hashed passwords
 INSERT INTO users (name, email, password, role, university_id, department_id, section) VALUES
 ('Admin User', 'admin@example.com', MD5('admin123'), 'admin', 1, NULL, NULL),
 ('Teacher One', 'teacher1@example.com', MD5('teacher121'), 'teacher', 1, 1, NULL),
 ('Teacher Two', 'teacher2@example.com', MD5('teacher122'), 'teacher', 1, 2, NULL),
-('Teacher Three', 'teacher3@example.com', MD5('teacher123'), 'teacher', 1, 3, NULL),
-('Student One', 'student1@example.com', MD5('student121'), 'student', 1, 1, 'A'),
-('Student Two', 'student2@example.com', MD5('student122'), 'student', 1, 1, 'B'),
-('Student Three', 'student3@example.com', MD5('student123'), 'student', 1, 1, 'C'),
-('Student Four', 'student4@example.com', MD5('student124'), 'student', 1, 1, 'D'),
-('Student Five', 'student5@example.com', MD5('student125'), 'student', 1, 2, 'A'),
-('Student Six', 'student6@example.com', MD5('student126'), 'student', 1, 2, 'B'),
-('Student Seven', 'student7@example.com', MD5('student127'), 'student', 1, 2, 'C'),
-('Student Eight', 'student8@example.com', MD5('student128'), 'student', 1, 3, 'A'),
-('Student Nine', 'student9@example.com', MD5('student129'), 'student', 1, 3, 'B');
+('Student One', 'student1@example.com', MD5('student121'), 'student', 1, 1, 'A');
+('Student One', 'student@example.com', MD5('student123'), 'student', 1, 1, 'C');
