@@ -43,5 +43,4 @@ SmartSchedule is a PHP + MySQL-based web application that streamlines the schedu
 
 ---
 
-## 📂 Folder Structure
 
