@@ -47,12 +47,31 @@ CREATE TABLE schedules (
     FOREIGN KEY (scheduled_by) REFERENCES users(id)
 );
 
+CREATE TABLE locations {
+    building VARCHAR(10),
+    room VARCHAR(10)
+};
+
 INSERT INTO universities (name) VALUES ('Example University');
 
 INSERT INTO departments (university_id, name) VALUES 
 (1, 'Computer Science'),
 (1, 'Electrical Engineering'),
 (1, 'Architecture');
+
+INSERT INTO location (building, room) VALUES
+(57, 1001), (57, 1002), (57, 1003),
+(57, 2001), (57, 2002), (57, 2003),
+(57, 3001), (57, 3002), (57, 3003),
+(57, 4001), (57, 4002), (57, 4003),
+(57, 5001), (57, 5002), (57, 5003),
+
+(58, 1001), (58, 1002), (58, 1003),
+(58, 2001), (58, 2002), (58, 2003),
+(58, 3001), (58, 3002), (58, 3003),
+(58, 4001), (58, 4002), (58, 4003),
+(58, 5001), (58, 5002), (58, 5003);
+
 
 -- Users with MD5-hashed passwords
 INSERT INTO users (name, email, password, role, university_id, department_id, section) VALUES
