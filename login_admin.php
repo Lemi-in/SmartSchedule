@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php'; // This defines $conn
+require './db.php'; // This defines $conn
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
