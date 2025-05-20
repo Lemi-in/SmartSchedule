@@ -16,7 +16,7 @@
 	--color-gray-300: rgba(0, 0, 0, 0.08);  /* light borders or backgrounds */
 	--color-gray-200: rgba(0, 0, 0, 0.05);  /* even lighter accents */
 	--color-white: #ffffff;
-	--color-bg: #d8d8f0; /* Ivory background */
+	--color-bg:#fffddd; /* Ivory background */
 
 	/* Transitions and Layout */
 	--transition: all 300ms ease;
@@ -44,7 +44,7 @@ body{
 	line-height: 1.6;
 	color: var(--color-gray-900);
 	overflow-x: hidden;
-	background: var(--color-bg);
+	background:#ffffff;
 	font-size: 0.9rem;
 	text-decoration: none;
 }
@@ -159,7 +159,7 @@ nav button{
 
 .nav__profile ul li a {
 	padding: 1rem;
-	background:var(--color-red);
+	background:var(--color-primary);
 	display: block;
 	width: 100%;
 }
