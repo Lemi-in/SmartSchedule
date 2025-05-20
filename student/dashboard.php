@@ -1,4 +1,3 @@
-Kidus A, [5/20/2025 10:09 AM]
 <?php
 // include './includes/auth.php';
 session_start();
