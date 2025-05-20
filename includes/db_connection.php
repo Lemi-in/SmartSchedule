@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "smart_schedule";
+$database = "university_scheduler";
 
 $conn = mysqli_connect($host, $username, $password, $database);
 

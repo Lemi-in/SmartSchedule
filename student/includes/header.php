@@ -36,5 +36,6 @@
         <button id="open__nav-btn" > <i class="uil uil-bars"></i></button>
         <button id="close_-nav-btn"><i class="uil uil-multiply"></i></button>
     </div>
+</nav>
 
 <div class="container">

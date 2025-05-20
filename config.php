@@ -1,6 +1,6 @@
 <?php
 // Database configuration
-$host = 'localhost:3400';       // Remove :3400 unless you specifically need it
+$host = 'localhost';       // Remove :3400 unless you specifically need it
 $dbname = 'university_scheduler';
 $username = 'root';
 $password = '';

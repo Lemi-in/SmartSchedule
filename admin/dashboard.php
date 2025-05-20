@@ -3,7 +3,7 @@ session_start();
 require '../db.php';
 require './admin_functions.php';
 
-// Verify admin role
+
 if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 1) {
     header("Location: ../index.php");
     exit();
